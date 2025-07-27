@@ -1,0 +1,131 @@
+.searchBar {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #00e0ff;
+  border-radius: 5px;
+  background-color: #141414;
+  color: white;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #666;
+}
+
+.spinner {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #00e0ff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background-color: #141414;
+  border: 1px solid #00e0ff;
+  border-radius: 5px;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdownItem:hover {
+  background-color: #00e0ff;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.showAllItem {
+  text-align: center;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resultInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.resultTitle {
+  font-weight: 500;
+}
+
+.resultTag {
+  background-color: #444;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .searchBar {
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* smaller */
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 0.5rem 0.8rem; /* smaller padding */
+    font-size: 0.9rem; /* smaller text */
+    border: 2px solid #00e0ff;
+    border-radius: 5px;
+    background-color: #141414;
+    color: white;
+    outline: none;
+  }
+  
+  .searchInput::placeholder {
+    color: #666;
+  }
+  
+  
+  
+  
+}

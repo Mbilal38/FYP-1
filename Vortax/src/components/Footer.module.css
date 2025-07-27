@@ -1,0 +1,25 @@
+main {
+  flex-grow: 1;
+}
+
+/* Footer styles */
+.footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #565656;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  /* Optional styling to give it some distinction */
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 5vh;
+}
+
+.footer p {
+  margin: 0;
+  color: #00e0ff;
+  /* Netflix gray */
+}

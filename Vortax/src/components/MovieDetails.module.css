@@ -1,0 +1,273 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+  font-family: 'Merriweather', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #141414;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Main content layout */
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Clear thumbnail */
+.thumbnail {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Details section */
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2.2rem;
+  color: #00e0ff;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.genres {
+  margin-bottom: 1.2rem;
+}
+
+.genres h3 {
+  color: #00e0ff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.genres ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.genres li {
+  background-color: #1f1f1f;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+/* Cast section */
+.cast {
+  margin-bottom: 1.5rem;
+}
+
+.cast h3 {
+  color: #00e0ff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.castList {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.castItem {
+  background-color: #1f1f1f;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Buttons container */
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Watch Now button */
+.watchButton {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #00ff88;
+  background-color: transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid #00ff88;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  min-width: 140px;
+}
+
+.watchButton:hover {
+  background-color: #00e0ff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Watchlist button styling */
+.addButton {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #00ff88;
+  background-color: transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid #00ff88;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  min-width: 140px;
+}
+
+.addButton:hover {
+  background-color: #00e0ff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments - Mobile First */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .content {
+    flex-direction: column;
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .thumbnail {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .details {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .genres h3, .cast h3 {
+    text-align: center;
+  }
+  
+  .genres ul, .castList {
+    justify-content: center;
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  
+  .watchButton, .addButton {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+  }
+  
+  .genres li, .castItem {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .watchButton, .addButton {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Portrait tablets and medium screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content {
+    gap: 1.2rem;
+  }
+  
+  .thumbnail {
+    width: 250px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .buttonsContainer {
+    flex-wrap: wrap;
+  }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+  .content {
+    max-width: 1400px;
+  }
+  
+  .thumbnail {
+    width: 350px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .description {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,308 @@
+/* Base styles */
+.videoContainer {
+  position: relative;
+  background-color: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16/9; /* Maintain 16:9 aspect ratio */
+}
+
+.videoContainer.fullscreen {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0;
+  max-width: none;
+  aspect-ratio: auto;
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+}
+
+.controlsOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.controlsOverlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.progressBarContainer {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.timeInfo {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.mainControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.leftControls, .rightControls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.controlButton {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.controlButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volumeSlider {
+  width: 80px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.timeDisplay {
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.speedSelect, .qualitySelect {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.playOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.playIcon {
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playIcon i {
+  font-size: 40px;
+  color: #fff;
+  margin-left: 5px;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  color: #fff;
+  text-align: center;
+}
+
+.errorMessage {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.retryButton {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.retryButton:hover {
+  background: #f40612;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .videoContainer {
+    max-width: 90vw;
+  }
+  
+  .mainControls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .leftControls, .rightControls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .speedSelect, .qualitySelect {
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+  
+  .timeDisplay {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .videoContainer {
+    border-radius: 0;
+  }
+  
+  .controlsOverlay {
+    padding: 8px;
+  }
+  
+  .leftControls, .rightControls {
+    gap: 8px;
+  }
+  
+  .volumeSlider {
+    width: 60px;
+  }
+  
+  .timeDisplay {
+    display: none;
+  }
+  
+  .controlButton {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+  
+  .speedSelect, .qualitySelect {
+    padding: 3px 5px;
+    font-size: 12px;
+  }
+  
+  .playIcon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .playIcon i {
+    font-size: 30px;
+  }
+  
+  .errorContainer {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 400px) {
+  .volumeSlider {
+    width: 50px;
+  }
+  
+  .speedSelect, .qualitySelect {
+    padding: 2px 4px;
+    font-size: 11px;
+  }
+  
+  .qualityControl {
+    max-width: 80px;
+  }
+}

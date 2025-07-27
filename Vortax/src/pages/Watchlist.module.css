@@ -1,0 +1,20 @@
+/* src/pages/Watchlist.module.css */
+.watchlistPage {
+  padding: 20px;
+  background-color: #141414;
+  /* Netflix dark background */
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.watchlistContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

@@ -1,0 +1,42 @@
+/* src/components/WatchlistItem.module.css */
+.watchlistItem {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  /* Dark separator line */
+  color: #ffffff;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 120px;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 2px solid #e50914;
+  /* Red border around thumbnails */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.removeButton {
+  padding: 6px 12px;
+  color: #ffffff;
+  font-weight: bold;
+  color: #00ff88;
+  background-color: transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  border-color: aliceblue;
+  width: 200px;
+}
+
+.removeButton:hover {
+  background-color: #00e0ff;
+  color: #000;
+  transform: scale(1.1);
+  /* Darker red on hover */
+}

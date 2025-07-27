@@ -1,0 +1,240 @@
+.container {
+  height: auto;
+  width: 100%;
+  color: white;
+  font-family: 'Merriweather', serif;
+  padding: 1rem;
+  background-color: #141414;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.content {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Mobile responsiveness only */
+@media (max-width: 767px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .thumbnail {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-top: 0.75rem;
+  }
+}
+
+.thumbnail {
+  width: 260px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 767px) {
+  .thumbnail {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+.details {
+  flex: 1;
+}
+
+.title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2rem;
+  color: #00e0ff;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.75rem;
+    margin-top: 0.75rem;
+  }
+  
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.genres ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.genres h3, .cast h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.genres ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.genres li {
+  background-color: #1f1f1f;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Cast */
+.castList {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.castItem {
+  background-color: #1f1f1f;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Buttons */
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.watchButton, 
+.buttonsContainer button {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  color: #00ff88;
+  background-color: transparent;
+  border: 2px solid #00ff88;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+/* Mobile-specific button styling */
+@media (max-width: 767px) {
+  .description {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .buttonsContainer {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  .watchButton,
+  .buttonsContainer button {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
+
+.watchButton:hover,
+.buttonsContainer button:hover {
+  background-color: #00e0ff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Seasons */
+.seasons {
+  margin-top: 2rem;
+}
+
+.season {
+  margin-bottom: 1rem;
+  background-color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.seasonHeader {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #00e0ff;
+  align-items: center;
+}
+
+.episodes {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.episodeButton {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  font-size: 1rem;
+  transition: all 0.3s;
+  padding: 0.75rem 1rem;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.episodeButton:hover {
+  color: #00ff88;
+  background-color: #333;
+  border-left: 3px solid #00ff88;
+}
+
+/* Responsive improvements for seasons section */
+@media (min-width: 992px) {
+  .seasons {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+}
+
+/* Loading and error states */
+.loading, .error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #ff6b6b;
+}

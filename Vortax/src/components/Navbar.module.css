@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Merriweather', serif;
+  background: #000;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141414;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1001;
+}
+
+.logo {
+  font-family: 'Audiowide', sans-serif;
+  color: #00e0ff;
+  font-size: 3.8rem;
+  font-weight: bold;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #00e0ff;
+  cursor: pointer;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  border: 2px solid #00e0ff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.navLinks li a {
+  color: #00e0ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navLinks li a:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: white;
+  background-color: #00e0ff;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #0f8;
+  transform: scale(1.1);
+}
+
+/* Hide close button by default */
+.closeButton {
+  display: none;
+}
+
+/* ============= MOBILE ============= */
+@media (max-width: 768px) {
+  .logo {
+    text-align: center;
+    flex: 1;
+    font-size: 2.8rem;
+  }
+
+  .menuButton {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1002;
+  }
+
+  /* Side Menu */
+  .sideMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: rgba(20, 20, 20, 0.95);
+    width: 40%;
+    height: 100vh;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    transition: right 0.5s ease;
+    z-index: 1003;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    backdrop-filter: blur(8px);
+  }
+
+  .showMenu {
+    right: 0;
+  }
+
+  /* NavLinks inside sideMenu */
+  .sideMenu .navLinks {
+    flex-direction: column;
+    border: none;
+    gap: 1.2rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .sideMenu .navLinks li a {
+    font-size: 1.5rem;
+  }
+
+  .logoutButton {
+    margin-top: 1rem;
+  }
+
+  /* Close button */
+  .closeButton {
+    background: none;
+    display: block;
+    border: none;
+    font-size: 2.5rem;
+    color: #00e0ff;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    cursor: pointer;
+  }
+
+  /* Backdrop */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
