@@ -8,8 +8,19 @@ const app = express();
 // Connect to Database
 connectDB();
 
+// CORS Configuration
+const corsOptions = {
+  origin: [
+    'https://vortax-ott.vercel.app',  // Your Vercel frontend URL
+    'http://localhost:3000',     // For local development
+    'http://localhost:3001'      // Alternative local port if needed
+  ],
+  credentials: true,             // Allow cookies/auth headers
+  optionsSuccessStatus: 200      // Support legacy browsers
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));  // Use specific CORS options instead of cors()
 app.use(express.json());
 
 // Define Routes
