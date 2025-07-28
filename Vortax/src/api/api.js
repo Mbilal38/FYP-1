@@ -1,32 +1,35 @@
 import axios from 'axios';
 
-const API_URL = "https://vortax.herokuapp.com/api";  // Heroku backend URL
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://vortax-edcba725ebd5.herokuapp.com'
+  : 'http://localhost:5000';
 
 // Fetch all movies
 export const fetchMovies = async () => {
-  const response = await axios.get(`${API_BASE_URL}/movies`);
+  const response = await axios.get(`${API_BASE_URL}/api/movies`);
   return response.data;
 };
 
 // Fetch all TV shows
 export const fetchTVShows = async () => {
-  const response = await axios.get(`${API_BASE_URL}/tvshows`);
+  const response = await axios.get(`${API_BASE_URL}/api/tvshows`);
   return response.data;
 };
-//fetch recommendations
+
+// Fetch recommendations
 export const fetchRecommendations = async ({ type, query }) => {
-  return fetch('/api/recommendations', {
+  return fetch(`${API_BASE_URL}/api/recommendations`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query, type }),
   });
 };
-// User Recommendation
-// Add to existing API functions
+
+// Fetch user recommendations
 export const fetchUserRecommendations = async (token) => {
   try {
     const config = token ? { headers: { Authorization: `Bearer ${token}` } } : {};
-    const response = await axios.get('/api/user-recommendations', config);
+    const response = await axios.get(`${API_BASE_URL}/api/user-recommendations`, config);
     return response.data;
   } catch (error) {
     console.error('Error fetching user recommendations:', error);
